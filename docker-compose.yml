@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  nitter:
+    image: zedeus/nitter:latest
+    container_name: nitter
+    restart: always
+    network_mode: "host"
+    volumes:
+      - ./nitter.conf:/src/nitter.conf:ro
+
+  nitter-redis:
+    image: redis:6-alpine
+    container_name: nitter-redis
+    restart: always
+    network_mode: "host"
+    command: redis-server --save 60 1 --loglevel warning
