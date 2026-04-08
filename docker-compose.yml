@@ -8,6 +8,7 @@ services:
     network_mode: "host"
     volumes:
       - ./nitter.conf:/src/nitter.conf:ro
+      - ./sessions.jsonl:/src/sessions.jsonl:ro
 
   nitter-redis:
     image: redis:6-alpine
