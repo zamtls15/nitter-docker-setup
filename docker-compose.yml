@@ -13,7 +13,7 @@ services:
     depends_on:
       - redis
     ports:
-      - "8091:8080"
+      - "8099:8080"
     volumes:
       - ./nitter.conf:/src/nitter.conf:ro
       - ./sessions.jsonl:/src/sessions.jsonl:ro
